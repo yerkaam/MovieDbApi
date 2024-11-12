@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  assignment_7
+//  MovieDB
 //
-//  Created by Yerdaulet Orynbay on 10.11.2024.
+//  Created by FIskalinov on 21.10.2024.
 //
 
 import UIKit
@@ -10,10 +10,10 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.rootViewController = UINavigationController(rootViewController: ViewController())
+        window.makeKeyAndVisible()
         return true
     }
 
@@ -33,4 +33,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-
