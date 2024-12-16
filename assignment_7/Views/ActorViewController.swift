@@ -12,6 +12,11 @@ class ActorViewController: UIViewController {
     private let alsoKnownAsLabel = UILabel()
     private let birthdayLabel = UILabel()
     private let placeOfBirthLabel = UILabel()
+    
+    private let separatorLine1 = UIView()
+    private let separatorLine2 = UIView()
+    private let separatorLine3 = UIView()
+    private let separatorLine4 = UIView()
 
     init(actor: Cast) {
         self.actor = actor
@@ -24,9 +29,8 @@ class ActorViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .black
         title = actor?.name
-
         setupUI()
         loadActorData()
     }
@@ -49,14 +53,30 @@ class ActorViewController: UIViewController {
         birthdayLabel.translatesAutoresizingMaskIntoConstraints = false
         placeOfBirthLabel.translatesAutoresizingMaskIntoConstraints = false
 
+        separatorLine1.backgroundColor = .white
+        separatorLine1.translatesAutoresizingMaskIntoConstraints = false
+        separatorLine2.backgroundColor = .white
+        separatorLine2.translatesAutoresizingMaskIntoConstraints = false
+        separatorLine3.backgroundColor = .white
+        separatorLine3.translatesAutoresizingMaskIntoConstraints = false
+        separatorLine4.backgroundColor = .white
+        separatorLine4.translatesAutoresizingMaskIntoConstraints = false
+
         nameLabel.font = UIFont.boldSystemFont(ofSize: 24)
         biographyLabel.font = UIFont.systemFont(ofSize: 16)
         biographyLabel.numberOfLines = 0
-        biographyLabel.textColor = .gray
+        biographyLabel.textColor = .white
+        nameLabel.textColor = .white
 
         alsoKnownAsLabel.font = UIFont.systemFont(ofSize: 16)
+        alsoKnownAsLabel.textColor = .white
+        alsoKnownAsLabel.numberOfLines = 0
         birthdayLabel.font = UIFont.systemFont(ofSize: 16)
+        birthdayLabel.textColor = .white
+        birthdayLabel.numberOfLines = 0
         placeOfBirthLabel.font = UIFont.systemFont(ofSize: 16)
+        placeOfBirthLabel.textColor = .white
+        placeOfBirthLabel.numberOfLines = 0
 
         contentView.addSubview(actorImageView)
         contentView.addSubview(nameLabel)
@@ -64,6 +84,11 @@ class ActorViewController: UIViewController {
         contentView.addSubview(alsoKnownAsLabel)
         contentView.addSubview(birthdayLabel)
         contentView.addSubview(placeOfBirthLabel)
+        
+        contentView.addSubview(separatorLine1)
+        contentView.addSubview(separatorLine2)
+        contentView.addSubview(separatorLine3)
+        contentView.addSubview(separatorLine4)
 
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -85,19 +110,39 @@ class ActorViewController: UIViewController {
             nameLabel.topAnchor.constraint(equalTo: actorImageView.bottomAnchor, constant: 20),
             nameLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
 
-            biographyLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 20),
+            separatorLine1.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10),
+            separatorLine1.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            separatorLine1.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            separatorLine1.heightAnchor.constraint(equalToConstant: 1),
+
+            biographyLabel.topAnchor.constraint(equalTo: separatorLine1.bottomAnchor, constant: 20),
             biographyLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             biographyLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
 
-            alsoKnownAsLabel.topAnchor.constraint(equalTo: biographyLabel.bottomAnchor, constant: 20),
+            separatorLine2.topAnchor.constraint(equalTo: biographyLabel.bottomAnchor, constant: 20),
+            separatorLine2.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            separatorLine2.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            separatorLine2.heightAnchor.constraint(equalToConstant: 1),
+
+            alsoKnownAsLabel.topAnchor.constraint(equalTo: separatorLine2.bottomAnchor, constant: 20),
             alsoKnownAsLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             alsoKnownAsLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
 
-            birthdayLabel.topAnchor.constraint(equalTo: alsoKnownAsLabel.bottomAnchor, constant: 20),
+            separatorLine3.topAnchor.constraint(equalTo: alsoKnownAsLabel.bottomAnchor, constant: 20),
+            separatorLine3.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            separatorLine3.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            separatorLine3.heightAnchor.constraint(equalToConstant: 1),
+
+            birthdayLabel.topAnchor.constraint(equalTo: separatorLine3.bottomAnchor, constant: 20),
             birthdayLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             birthdayLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
 
-            placeOfBirthLabel.topAnchor.constraint(equalTo: birthdayLabel.bottomAnchor, constant: 20),
+            separatorLine4.topAnchor.constraint(equalTo: birthdayLabel.bottomAnchor, constant: 20),
+            separatorLine4.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            separatorLine4.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            separatorLine4.heightAnchor.constraint(equalToConstant: 1),
+
+            placeOfBirthLabel.topAnchor.constraint(equalTo: separatorLine4.bottomAnchor, constant: 20),
             placeOfBirthLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             placeOfBirthLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             placeOfBirthLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20)
@@ -107,24 +152,21 @@ class ActorViewController: UIViewController {
     private func loadActorData() {
         guard let actor = actor else { return }
 
-     
-        NetworkingManager.shared.getActors(actorId: actor.id) { actorDetails in
+        NetworkingManager.shared.getActors(actorId: actor.id) { [weak self] actorDetails in
             DispatchQueue.main.async {
                 guard let details = actorDetails else { return }
-
-                self.actorDetails = details
-                self.nameLabel.text = details.name
-                self.biographyLabel.text = details.biography
-                self.alsoKnownAsLabel.text = "Also Known As: " + details.alsoKnownAs.joined(separator: ", ")
-                self.birthdayLabel.text = "Birthday: " + details.birthday
-                self.placeOfBirthLabel.text = "Place of Birth: " + details.placeOfBirth
+                self?.actorDetails = details
+                self?.nameLabel.text = details.name
+                self?.biographyLabel.text = details.biography
+                self?.alsoKnownAsLabel.text = "Also Known As: " + details.alsoKnownAs.joined(separator: ", ")
+                self?.birthdayLabel.text = "Birthday: " + details.birthday
+                self?.placeOfBirthLabel.text = "Place of Birth: " + details.placeOfBirth
 
                 if !details.profilePath.isEmpty {
                     NetworkingManager.shared.loadImage(porterPath: details.profilePath) { image in
-                        self.actorImageView.image = image
+                        self?.actorImageView.image = image
                     }
                 }
-
             }
         }
     }

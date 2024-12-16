@@ -17,6 +17,7 @@ class ActorCell: UITableViewCell {
         
         actorNameLabel.numberOfLines = 0
         actorNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        actorNameLabel.textColor = .white
         contentView.addSubview(actorNameLabel)
         
         NSLayoutConstraint.activate([
@@ -38,7 +39,6 @@ class ActorCell: UITableViewCell {
     func configure(with actor: Cast) {
         actorNameLabel.text = actor.name
         
-        // Load actor's image
         if let profilePath = actor.profilePath {
             let imageUrl = "https://image.tmdb.org/t/p/w500\(profilePath)"
             NetworkingManager.shared.loadImage(porterPath: imageUrl) { image in

@@ -1,6 +1,6 @@
 import UIKit
 
-class MovieCell: UITableViewCell {
+class MovieCell: UICollectionViewCell {
     
     let movieImageView: UIImageView = {
         let imageView = UIImageView()
@@ -18,7 +18,7 @@ class MovieCell: UITableViewCell {
     
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 14, weight: .light)
         label.textColor = .white
         label.numberOfLines = 2
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -31,16 +31,15 @@ class MovieCell: UITableViewCell {
     
     let voteAverageLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)  
+        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         label.textColor = .blue
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         return label
     }()
 
-
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
         contentView.addSubview(movieImageView)
         contentView.addSubview(titleLabel)
@@ -56,7 +55,6 @@ class MovieCell: UITableViewCell {
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             
-          
             voteAverageLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4),
             voteAverageLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             voteAverageLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),

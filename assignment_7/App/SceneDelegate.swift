@@ -1,57 +1,52 @@
-//
-//  SceneDelegate.swift
-//  assignment_7
-//
-//  Created by Yerdaulet Orynbay on 10.11.2024.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        
+
         let window = UIWindow(windowScene: windowScene)
-        let rootViewController = ViewController()
-        let navigationController = UINavigationController(rootViewController: rootViewController)
-        
-        window.rootViewController = navigationController
         self.window = window
+
+        if isUserLoggedIn() {
+            let tabBarController = createTabBarController()
+            setRootViewController(tabBarController, animated: false)
+        } else {
+            let loginVC = SignUpViewController()
+            let navigationController = UINavigationController(rootViewController: loginVC)
+            setRootViewController(navigationController, animated: false)
+        }
         window.makeKeyAndVisible()
     }
-
-    func sceneDidDisconnect(_ scene: UIScene) {
-        // Called as the scene is being released by the system.
-        // This occurs shortly after the scene enters the background, or when its session is discarded.
-        // Release any resources associated with this scene that can be re-created the next time the scene connects.
-        // The scene may re-connect later, as its session was not necessarily discarded (see `application:didDiscardSceneSessions` instead).
+    private func isUserLoggedIn() -> Bool {
+       
+        return UserDefaults.standard.bool(forKey: "isLoggedIn")
     }
+    func createTabBarController() -> UITabBarController {
+        let tabBarController = UITabBarController()
 
-    func sceneDidBecomeActive(_ scene: UIScene) {
-        // Called when the scene has moved from an inactive state to an active state.
-        // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
+        let moviesVC = ViewController()
+        moviesVC.tabBarItem = UITabBarItem(title: "Movies", image: UIImage(systemName: "film"), tag: 0)
+        let moviesNavController = UINavigationController(rootViewController: moviesVC)
+
+        let userVC = UserViewController()
+        userVC.tabBarItem = UITabBarItem(title: "User", image: UIImage(systemName: "person.circle"), tag: 1)
+        let userNavController = UINavigationController(rootViewController: userVC)
+
+        tabBarController.viewControllers = [moviesNavController, userNavController]
+        tabBarController.tabBar.barTintColor = .black
+        tabBarController.tabBar.tintColor = .systemPink
+
+        return tabBarController
     }
-
-    func sceneWillResignActive(_ scene: UIScene) {
-        // Called when the scene will move from an active state to an inactive state.
-        // This may occur due to temporary interruptions (ex. an incoming phone call).
+    func setRootViewController(_ vc: UIViewController, animated: Bool = true) {
+        guard let window = self.window else { return }
+        window.rootViewController = vc
+        if animated {
+            UIView.transition(with: window, duration: 0.5, options: .transitionFlipFromRight, animations: nil, completion: nil)
+        }
     }
-
-    func sceneWillEnterForeground(_ scene: UIScene) {
-        // Called as the scene transitions from the background to the foreground.
-        // Use this method to undo the changes made on entering the background.
-    }
-
-    func sceneDidEnterBackground(_ scene: UIScene) {
-        // Called as the scene transitions from the foreground to the background.
-        // Use this method to save data, release shared resources, and store enough scene-specific state information
-        // to restore the scene back to its current state.
-    }
-
 
 }
-

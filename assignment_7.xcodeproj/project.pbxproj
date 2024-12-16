@@ -25,6 +25,11 @@
 		8D9A62B02CE20E8C00C4005C /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9A62AF2CE20E8C00C4005C /* NetworkingManager.swift */; };
 		8D9A62B22CE3356200C4005C /* ActorDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9A62B12CE3356200C4005C /* ActorDetails.swift */; };
 		8D9A62B42CE3641100C4005C /* Actors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9A62B32CE3641100C4005C /* Actors.swift */; };
+		8DCD91792D0C590200A80CAE /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCD91782D0C590200A80CAE /* MoviesViewController.swift */; };
+		8DCD917B2D0C613300A80CAE /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCD917A2D0C613300A80CAE /* UserViewController.swift */; };
+		8DCD917D2D0C9E5D00A80CAE /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCD917C2D0C9E5D00A80CAE /* SignUpViewController.swift */; };
+		8DCD91802D0C9EC000A80CAE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCD917F2D0C9EC000A80CAE /* LoginViewController.swift */; };
+		8DCD91842D0D8AEF00A80CAE /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCD91832D0D8AEF00A80CAE /* CustomCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +85,11 @@
 		8D9A62AF2CE20E8C00C4005C /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		8D9A62B12CE3356200C4005C /* ActorDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorDetails.swift; sourceTree = "<group>"; };
 		8D9A62B32CE3641100C4005C /* Actors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actors.swift; sourceTree = "<group>"; };
+		8DCD91782D0C590200A80CAE /* MoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
+		8DCD917A2D0C613300A80CAE /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		8DCD917C2D0C9E5D00A80CAE /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		8DCD917F2D0C9EC000A80CAE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8DCD91832D0D8AEF00A80CAE /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,8 +184,12 @@
 			isa = PBXGroup;
 			children = (
 				8D9A62692CE0D27900C4005C /* ViewController.swift */,
+				8DCD917C2D0C9E5D00A80CAE /* SignUpViewController.swift */,
 				8D9A629A2CE0DD3500C4005C /* MovieDetailViewController.swift */,
 				8D9A62AD2CE10C6700C4005C /* ActorViewController.swift */,
+				8DCD91782D0C590200A80CAE /* MoviesViewController.swift */,
+				8DCD917A2D0C613300A80CAE /* UserViewController.swift */,
+				8DCD917F2D0C9EC000A80CAE /* LoginViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -203,6 +217,7 @@
 			children = (
 				8D9A629C2CE0E53500C4005C /* MovieCell.swift */,
 				8D9A62AB2CE0F7A300C4005C /* ActorCell.swift */,
+				8DCD91832D0D8AEF00A80CAE /* CustomCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -346,13 +361,18 @@
 			files = (
 				8D9A62B22CE3356200C4005C /* ActorDetails.swift in Sources */,
 				8D9A626A2CE0D27900C4005C /* ViewController.swift in Sources */,
+				8DCD91842D0D8AEF00A80CAE /* CustomCell.swift in Sources */,
 				8D9A62A82CE0F15F00C4005C /* MovieDetail.swift in Sources */,
 				8D9A62B42CE3641100C4005C /* Actors.swift in Sources */,
 				8D9A62AC2CE0F7A300C4005C /* ActorCell.swift in Sources */,
 				8D9A629B2CE0DD3500C4005C /* MovieDetailViewController.swift in Sources */,
 				8D9A629D2CE0E53500C4005C /* MovieCell.swift in Sources */,
+				8DCD917B2D0C613300A80CAE /* UserViewController.swift in Sources */,
 				8D9A62662CE0D27900C4005C /* AppDelegate.swift in Sources */,
+				8DCD917D2D0C9E5D00A80CAE /* SignUpViewController.swift in Sources */,
+				8DCD91792D0C590200A80CAE /* MoviesViewController.swift in Sources */,
 				8D9A62992CE0DC5E00C4005C /* Movie.swift in Sources */,
+				8DCD91802D0C9EC000A80CAE /* LoginViewController.swift in Sources */,
 				8D9A62B02CE20E8C00C4005C /* NetworkingManager.swift in Sources */,
 				8D9A62682CE0D27900C4005C /* SceneDelegate.swift in Sources */,
 				8D9A62AE2CE10C6700C4005C /* ActorViewController.swift in Sources */,
@@ -537,6 +557,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7A2SK358JA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = assignment_7/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -564,6 +585,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7A2SK358JA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = assignment_7/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

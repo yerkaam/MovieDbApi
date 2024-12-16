@@ -7,7 +7,6 @@
 
 import Foundation
 
-// Структура для данных актера
 struct Actors: Codable {
     let adult: Bool
     let alsoKnownAs: [String]
